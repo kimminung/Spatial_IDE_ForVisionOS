@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "CodeSpace",
+      "name": "CodeSpace",
+      "kind": "module",
+      "parentID": null,
+      "codeSnippet": "@main\nstruct CodeSpaceApp: App {\n    var body: some Scene {\n        WindowGroup(id: \"Launcher\") { LauncherView() }\n        ImmersiveSpace(id: \"CodeSpaceImmersiveSpace\") {\n            CodeSpaceImmersiveView()\n        }\n    }\n}"
+    },
+    {
+      "id": "AppModel",
+      "name": "AppModel",
+      "kind": "type",
+      "parentID": "CodeSpace",
+      "codeSnippet": "@Observable\nfinal class AppModel {\n    var graph: CodeGraph = GraphLoader.loadBundledSample()\n    var immersionStyle: ImmersionStyle = .mixed\n    var selectedToken: TokenSelection?\n}"
+    },
+    {
+      "id": "GraphLoader",
+      "name": "GraphLoader",
+      "kind": "type",
+      "parentID": "CodeSpace",
+      "codeSnippet": "enum GraphLoader {\n    static func loadBundledSample() -> CodeGraph {\n        // SampleGraph.json을 읽어 CodeGraph로 디코딩한다.\n    }\n}"
+    },
+    {
+      "id": "SpatialLayout",
+      "name": "SpatialLayout",
+      "kind": "type",
+      "parentID": "CodeSpace",
+      "codeSnippet": "struct SpatialLayout {\n    var origin: SIMD3<Float> = [0, 1.3, -1.5]\n    var depthSpacing: Float = 0.5\n\n    func positions(for graph: CodeGraph)\n        -> [String: SIMD3<Float>] { ... }\n}"
+    },
+    {
+      "id": "SceneBuilder",
+      "name": "CodeGraphSceneBuilder",
+      "kind": "type",
+      "parentID": "CodeSpace",
+      "codeSnippet": "enum CodeGraphSceneBuilder {\n    static func makeRootEntity(\n        graph: CodeGraph,\n        layout: SpatialLayout,\n        includeParticles: Bool\n    ) -> Entity { ... }\n}"
+    },
+    {
+      "id": "AppModel.graph",
+      "name": "graph",
+      "kind": "variable",
+      "parentID": "AppModel",
+      "codeSnippet": "var graph: CodeGraph = GraphLoader.loadBundledSample()"
+    },
+    {
+      "id": "AppModel.immersionStyle",
+      "name": "immersionStyle",
+      "kind": "variable",
+      "parentID": "AppModel",
+      "codeSnippet": "var immersionStyle: ImmersionStyle = .mixed"
+    },
+    {
+      "id": "GraphLoader.load",
+      "name": "load()",
+      "kind": "function",
+      "parentID": "GraphLoader",
+      "codeSnippet": "static func load() -> CodeGraph {\n    do {\n        let data = try loadBundledData()\n        return try parse(data: data)\n    } catch {\n        return .sample\n    }\n}"
+    },
+    {
+      "id": "SpatialLayout.positions",
+      "name": "positions(for:)",
+      "kind": "function",
+      "parentID": "SpatialLayout",
+      "codeSnippet": "func positions(for graph: CodeGraph) -> [String: SIMD3<Float>] {\n    let depths = graph.callDepths()\n    // 깊이별로 X/Y/Z 좌표를 계산한다.\n}",
+      "breakpointLines": [1]
+    },
+    {
+      "id": "SceneBuilder.makeRoot",
+      "name": "makeRootEntity()",
+      "kind": "function",
+      "parentID": "SceneBuilder",
+      "codeSnippet": "static func makeRootEntity(\n    graph: CodeGraph, layout: SpatialLayout\n) -> Entity {\n    // 노드 + 엣지 + 파티클 엔티티를 생성해 루트에 매단다.\n}"
+    },
+    {
+      "id": "GraphLoader.parse",
+      "name": "parse(data:)",
+      "kind": "function",
+      "parentID": "GraphLoader",
+      "codeSnippet": "static func parse(data: Data) throws -> CodeGraph {\n    let graph = try JSONDecoder().decode(CodeGraph.self, from: data)\n    try validate(graph)\n    return graph\n}"
+    },
+    {
+      "id": "CodeGraph.callDepths",
+      "name": "callDepths()",
+      "kind": "function",
+      "parentID": "CodeSpace",
+      "codeSnippet": "func callDepths() -> [String: Int] {\n    // 루트 노드에서 BFS로 각 노드의 호출 깊이를 계산한다.\n}"
+    },
+    {
+      "id": "NodeEntityFactory.makeEntity",
+      "name": "makeEntity(for:)",
+      "kind": "function",
+      "parentID": "CodeSpace",
+      "codeSnippet": "static func makeEntity(for node: CodeNode) -> ModelEntity {\n    // kind별 메시/머티리얼 + Collision/InputTarget/Hover 컴포넌트 부여.\n}"
+    },
+    {
+      "id": "GraphLoader.validate",
+      "name": "validate(_:)",
+      "kind": "function",
+      "parentID": "GraphLoader",
+      "codeSnippet": "static func validate(_ graph: CodeGraph) throws {\n    guard !graph.nodes.isEmpty else {\n        fatalError(\"그래프에 노드가 없습니다\")\n    }\n    if hasDuplicateIDs(graph) { throw GraphError.duplicateID }\n}"
+    }
+  ],
+  "edges": [
+    { "from": "CodeSpace", "to": "AppModel", "kind": "owns" },
+    { "from": "CodeSpace", "to": "GraphLoader", "kind": "owns" },
+    { "from": "CodeSpace", "to": "SpatialLayout", "kind": "owns" },
+    { "from": "CodeSpace", "to": "SceneBuilder", "kind": "owns" },
+    { "from": "AppModel", "to": "AppModel.graph", "kind": "owns" },
+    { "from": "AppModel", "to": "AppModel.immersionStyle", "kind": "owns" },
+    { "from": "GraphLoader", "to": "GraphLoader.load", "kind": "owns" },
+    { "from": "SpatialLayout", "to": "SpatialLayout.positions", "kind": "owns" },
+    { "from": "SceneBuilder", "to": "SceneBuilder.makeRoot", "kind": "owns" },
+    { "from": "GraphLoader.load", "to": "GraphLoader.parse", "kind": "throwsError" },
+    { "from": "GraphLoader.parse", "to": "GraphLoader.validate", "kind": "terminates" },
+    { "from": "SpatialLayout.positions", "to": "CodeGraph.callDepths", "kind": "calls" },
+    { "from": "SceneBuilder.makeRoot", "to": "NodeEntityFactory.makeEntity", "kind": "calls" },
+    { "from": "SceneBuilder.makeRoot", "to": "SpatialLayout.positions", "kind": "calls" },
+    { "from": "GraphLoader.load", "to": "AppModel.graph", "kind": "calls" }
+  ]
+}
