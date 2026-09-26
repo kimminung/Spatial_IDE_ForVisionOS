@@ -21,6 +21,8 @@ struct CodeSpaceImmersiveView: View {
     @Environment(\.colorScheme) private var colorScheme
     @State private var gestures = GraphGestureController()
     @State private var scene = GraphSceneController()
+    /// 머리 자세(ARKit). 정면 광선이 지나는 카드를 주시 노드로 잡아 그 위를 지나는 엣지를 비켜 가게 한다.
+    @State private var headTracker = HeadPoseTracker()
 
     /// 접힘 블록의 힌지 위치(노드 로컬 미터). 키는 접힘 attachment ID. 카드가 헤더 줄 프레임을 측정해 보고한다.
     @State private var foldHinges: [String: SIMD3<Float>] = [:]
@@ -47,9 +49,13 @@ struct CodeSpaceImmersiveView: View {
                 scene.searchAnchor.addChild(search)
             }
 
-            // 매 프레임: 포커스 엣지를 노드(또는 선택된 토큰) 위치에 동기화하고 흐름 펄스를 전진시킨다.
+            // 매 프레임: 포커스 엣지를 노드(또는 선택된 토큰) 위치에 동기화하고, 주시 카드를 피해 휘게 하고, 흐름 펄스를 전진시킨다.
             _ = content.subscribe(to: SceneEvents.Update.self) { event in
-                scene.tick(deltaTime: Float(event.deltaTime), endpointAnchors: appModel.activeEdgeAnchors)
+                scene.tick(
+                    deltaTime: Float(event.deltaTime),
+                    endpointAnchors: appModel.activeEdgeAnchors,
+                    headTransform: headTracker.deviceTransform
+                )
             }
         } update: { content, attachments in
             if let dome = content.entities.first(where: { $0.name == ImmersiveBackdropFactory.entityName }) {
@@ -61,18 +67,19 @@ struct CodeSpaceImmersiveView: View {
             let sizes = appModel.cardSizes.mapValues {
                 SIMD2<Float>(Float($0.width), Float($0.height)) / SceneStyle.pointsPerMeter
             }
-            let positions = appModel.layout.positions(
+            let placements = appModel.layout.placements(
                 visible: visible,
                 index: appModel.index,
                 expanded: appModel.expandedIDs,
                 sizes: sizes,
-                isCard: appModel.isCard
+                isCard: appModel.isCard,
+                depthLevels: appModel.depthLevels
             )
             let edges = appModel.edgeSets
             scene.sync(
                 visible: visible,
                 isCard: appModel.isCard,
-                positions: positions,
+                placements: placements,
                 focusEdges: edges.focus,
                 contextEdges: edges.context,
                 foldRegions: CodeFolder.regions(for:),
@@ -145,6 +152,12 @@ struct CodeSpaceImmersiveView: View {
         .onImmersionChange { _, newValue in
             appModel.immersionAmount = newValue.amount ?? 0
         }
+        .task {
+            await headTracker.start()
+        }
+        .onDisappear {
+            headTracker.stop()
+        }
     }
 
     // MARK: - 카드
@@ -170,7 +183,8 @@ struct CodeSpaceImmersiveView: View {
                 }
             },
             onSizeChange: { appModel.setCardSize(nodeID: node.id, size: $0) },
-            onCollapse: { appModel.collapse(node.id) }
+            onCollapse: { appModel.collapse(node.id) },
+            isRecentlyExpanded: appModel.lastExpandedID == node.id
         )
         .graphGestures(gestures)
     }

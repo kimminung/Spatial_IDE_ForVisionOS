@@ -115,6 +115,23 @@ struct ScenePalette: Equatable {
         scheme == .dark ? Color(red: 0.25, green: 0.56, blue: 1.00) : Color(red: 0.00, green: 0.40, blue: 0.90)
     }
 
+    /// 가장 최근에 펼친 카드의 테두리(형광 핑크). 축소해서 전체를 볼 때 방금 열었던 곳을 찾는 표식이다.
+    var recentExpansion: Color {
+        scheme == .dark ? Color(red: 1.00, green: 0.25, blue: 0.70) : Color(red: 0.95, green: 0.10, blue: 0.60)
+    }
+
+    /// 펼친 블록(타입 카드 + 멤버들)을 묶는 형광 테두리 색. 최근 펼침 표식(형광 핑크)과 같은 채도·밝기로, 블록마다 색조만 돌려 써서
+    /// 이웃 블록과 구분된다. `seed`는 블록 컨테이너 ID의 해시 등 안정적인 정수.
+    func groupFrame(seed: Int) -> Color {
+        let hues: [Double] = [0.52, 0.30, 0.09, 0.76, 0.16, 0.62]   // 시안, 라임, 오렌지, 바이올렛, 옐로, 블루(핑크는 최근 표식에 양보)
+        let hue = hues[abs(seed) % hues.count]
+        return scheme == .dark
+            ? Color(hue: hue, saturation: 0.80, brightness: 1.0)
+            : Color(hue: hue, saturation: 0.90, brightness: 0.80)
+    }
+    /// 그룹 테두리 불투명도. 형광 핑크 표식과 같은 수준으로 또렷하게.
+    var groupFrameOpacity: Float { 0.95 }
+
     /// Z축으로 접힌 블록의 힌지 표식 색. 접힌 것이 예외·탈출 경로이므로 엣지의 빨강 계열을 재사용한다.
     func foldHinge(for kind: CodeFoldRegion.Kind) -> Color {
         switch kind {

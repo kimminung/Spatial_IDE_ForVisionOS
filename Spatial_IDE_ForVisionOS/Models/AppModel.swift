@@ -19,8 +19,8 @@ struct ContextEdge: Hashable, Sendable {
 /// 앱 전역 상태. SwiftUI Environment로 주입되어 씬과 뷰가 공유한다.
 ///
 /// **포커스 모델(시맨틱 줌)**: 그래프 전체를 한 번에 그리지 않는다. 컨테이너(모듈·타입)는 펼치기 전까지
-/// 작은 칩 하나로 보이고, 펼치면 자기 카드와 자식들이 나타난다. 동시에 떠 있는 코드 카드는
-/// `cardBudget`을 넘지 않도록 가장 오래 전에 펼친 컨테이너부터 자동으로 접는다.
+/// 작은 칩 하나로 보이고, 펼치면 자기 카드와 자식들이 나타난다. 열 수 있는 카드 수에 상한은 두지 않는다
+/// (사용자 결정). 대신 블록마다 옅은 형광 테두리로 묶어 많이 펼쳐도 구분되게 한다.
 @Observable
 final class AppModel {
     /// `ImmersiveSpace(id:)`와 `openImmersiveSpace(id:)`에서 공유하는 식별자.
@@ -43,11 +43,17 @@ final class AppModel {
 
     /// 공간에 렌더링할 코드 그래프. 바뀌면 조회 캐시를 다시 만든다.
     var graph: CodeGraph {
-        didSet { index = GraphIndex(graph: graph) }
+        didSet {
+            index = GraphIndex(graph: graph)
+            depthLevels = index.topLevelDepthLevels()
+        }
     }
 
     /// 인접 리스트·심볼 참조 캐시.
     private(set) var index: GraphIndex
+
+    /// 최상위 타입의 의존 층(0 = 진입점, 클수록 피호출 쪽). 레이아웃이 Z 깊이로 쓴다.
+    private(set) var depthLevels: [String: Int]
 
     /// 노드 배치에 사용하는 레이아웃 파라미터.
     var layout = SpatialLayout()
@@ -58,8 +64,8 @@ final class AppModel {
     private(set) var expandedIDs: Set<String> = []
     /// 펼친 순서(오래된 것부터). 예산 초과 시 앞에서부터 접는다.
     private var expansionOrder: [String] = []
-    /// 동시에 떠 있을 수 있는 코드 카드 수의 상한. 함수 카드가 약 0.35 m 높이라 16장이면 대략 3줄 × 1 m 안에 들어간다.
-    var cardBudget = 16
+    /// 가장 최근에 펼친 노드. 축소해서 전체를 볼 때 "방금 열었던 곳"을 형광 핑크 테두리로 찾을 수 있게 한다.
+    private(set) var lastExpandedID: String?
 
     /// 카드/칩이 보고한 렌더링 크기(포인트). 레이아웃이 겹침 없이 배치하는 데 쓴다.
     private(set) var cardSizes: [String: CGSize] = [:]
@@ -115,7 +121,7 @@ final class AppModel {
         expandedIDs.insert(id)
         expansionOrder.removeAll { $0 == id }
         expansionOrder.append(id)
-        enforceCardBudget(protecting: Set(index.ancestors(of: id) + [id]))
+        lastExpandedID = id
     }
 
     /// 자신과 그 아래 펼쳐진 것들을 모두 접는다.
@@ -125,6 +131,7 @@ final class AppModel {
         while let current = stack.popLast() {
             expandedIDs.remove(current)
             expansionOrder.removeAll { $0 == current }
+            if lastExpandedID == current { lastExpandedID = expansionOrder.last }
             for child in index.children(of: current) where expandedIDs.contains(child.id) {
                 stack.append(child.id)
             }
@@ -135,13 +142,6 @@ final class AppModel {
     func reveal(_ id: String) {
         for ancestor in index.ancestors(of: id).reversed() {
             expand(ancestor)
-        }
-    }
-
-    private func enforceCardBudget(protecting protected: Set<String>) {
-        var candidates = expansionOrder.filter { !protected.contains($0) }
-        while cardCount > cardBudget, !candidates.isEmpty {
-            collapse(candidates.removeFirst())
         }
     }
 
@@ -160,9 +160,14 @@ final class AppModel {
         let visible = visibleNodeIDs
         let cards = Set(visibleNodes.filter(isCard).map(\.id))
 
+        // 모듈(루트)에 닿는 엣지는 그리지 않는다. 모듈 → 타입 소유는 레이아웃(모듈 카드 뒤의 칩 그리드)으로 이미 드러나고,
+        // 모듈로 묶인 컨텍스트 선은 어디로 가는지 정보가 없는 선만 늘린다.
+        let rootIDs = Set(index.roots.map(\.id))
+
         var focus: [CodeEdge] = []
         var weights: [ContextKey: Int] = [:]
         for edge in graph.edges {
+            guard !rootIDs.contains(edge.from), !rootIDs.contains(edge.to) else { continue }
             let fromVisible = visible.contains(edge.from)
             let toVisible = visible.contains(edge.to)
             if fromVisible && toVisible {
@@ -172,7 +177,7 @@ final class AppModel {
             guard edge.kind != .owns,
                   let a = representative(of: edge.from, visible: visible),
                   let b = representative(of: edge.to, visible: visible),
-                  a != b else { continue }
+                  a != b, !rootIDs.contains(a), !rootIDs.contains(b) else { continue }
             weights[ContextKey(from: a, to: b), default: 0] += 1
         }
         let context = weights.map { ContextEdge(from: $0.key.from, to: $0.key.to, weight: $0.value) }
@@ -292,8 +297,10 @@ final class AppModel {
 
     init() {
         let graph = GraphLoader.loadBundledGraph()
+        let index = GraphIndex(graph: graph)
         self.graph = graph
-        self.index = GraphIndex(graph: graph)
+        self.index = index
+        self.depthLevels = index.topLevelDepthLevels()
         self.breakpoints = Set(graph.nodes.flatMap { node in
             node.breakpointLines.map { Breakpoint(nodeID: node.id, line: $0) }
         })

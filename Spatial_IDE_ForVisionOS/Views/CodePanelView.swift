@@ -37,6 +37,10 @@ struct CodePanelView: View {
     var onSizeChange: ((CGSize) -> Void)? = nil
     /// 컨테이너(타입·모듈) 카드일 때만 제공: 자식들을 다시 접는다.
     var onCollapse: (() -> Void)? = nil
+    /// 가장 최근에 펼친 노드인지. 축소해서 전체를 볼 때 찾을 수 있도록 형광 핑크 테두리를 두른다.
+    var isRecentlyExpanded = false
+
+    private var palette: ScenePalette { ScenePalette(scheme: colorScheme) }
 
     private static let cardSpace = "codeCard"
 
@@ -118,6 +122,17 @@ struct CodePanelView: View {
             onSizeChange?(size)
         }
         .shadow(color: colorScheme == .dark ? .black.opacity(0.85) : .white.opacity(0.9), radius: 2)
+        .padding(isRecentlyExpanded ? 10 : 0)
+        .overlay {
+            if isRecentlyExpanded {
+                // 방금 펼친 곳 표식: 형광 핑크 테두리 + 은은한 광채. 코드 카드의 "테두리 없음" 원칙의 유일한 예외다.
+                RoundedRectangle(cornerRadius: 10)
+                    .strokeBorder(palette.recentExpansion, lineWidth: 2.5)
+                    .shadow(color: palette.recentExpansion.opacity(0.8), radius: 6)
+                    .allowsHitTesting(false)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: isRecentlyExpanded)
         .opacity(isDimmed ? SceneStyle.dimmedCardOpacity : 1)
         .animation(.easeInOut(duration: 0.2), value: isDimmed)
         .onChange(of: anchorTokenID, initial: true) { _, newValue in

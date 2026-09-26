@@ -30,7 +30,7 @@ struct SearchPanelView: View {
                     .buttonStyle(.plain)
                     .hoverEffect()
                 }
-                Text("카드 \(appModel.cardCount)/\(appModel.cardBudget)")
+                Text("카드 \(appModel.cardCount)")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }

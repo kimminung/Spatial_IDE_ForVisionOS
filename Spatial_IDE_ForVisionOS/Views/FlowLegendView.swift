@@ -9,7 +9,7 @@ struct FlowLegendView: View {
     var body: some View {
         HStack(spacing: 14) {
             item(color: palette.pulseColor(for: .calls), shape: .arrow, label: "호출")
-            item(color: palette.pulseColor(for: .owns), shape: .dot, label: "소유")
+            item(color: palette.pulseColor(for: .owns), shape: .dot, label: "소유(정적)")
             item(color: palette.errorFlow, shape: .reverseArrow, label: "오류 전파")
             item(color: palette.terminateFlow, shape: .stop, label: "종료")
             item(color: palette.containmentFlow, shape: .curve, label: "담김")
