@@ -45,13 +45,14 @@ enum EdgeEmphasis {
 @MainActor
 enum EdgeEntityFactory {
 
-    private static let baseRadius: Float = 0.003
-    private static let pulseRadius: Float = 0.0055
-    private static let headHeight: Float = 0.022
-    private static let headRadius: Float = 0.009
+    // 카드 텍스트(footnote ≈ 12 pt ≈ 9 mm)를 가리지 않도록 선은 1 mm대, 화살촉은 글자 한 자보다 작게 둔다.
+    private static let baseRadius: Float = 0.0011
+    private static let pulseRadius: Float = 0.0022
+    private static let headHeight: Float = 0.012
+    private static let headRadius: Float = 0.0042
 
     private static let curveSegments = 10
-    private static let curveRadius: Float = 0.0035
+    private static let curveRadius: Float = 0.0013
 
     static let lineName = "line"
     static let pulseName = "pulse"
@@ -94,7 +95,7 @@ enum EdgeEntityFactory {
     private static func headMesh(for kind: CodeEdgeKind) -> MeshResource {
         switch kind {
         case .terminates:
-            .generateBox(width: headRadius * 2.4, height: 0.004, depth: headRadius * 2.4, cornerRadius: 0.001)
+            .generateBox(width: headRadius * 2.4, height: 0.0025, depth: headRadius * 2.4, cornerRadius: 0.0008)
         default:
             .generateCone(height: headHeight, radius: headRadius)
         }
@@ -150,7 +151,7 @@ enum EdgeEntityFactory {
         container.findEntity(named: lineName)?.scale = SIMD3<Float>(1, max(length, 0.001), 1)
 
         if let head = container.findEntity(named: headName) {
-            let inset = headHeight / 2 + 0.012
+            let inset = headHeight / 2 + 0.004
             let atEnd = endpoints.kind != .throwsError
             head.position = SIMD3<Float>(0, (atEnd ? 1 : -1) * (length / 2 - inset), 0)
         }
@@ -209,7 +210,7 @@ enum EdgeEntityFactory {
         if let head = group.findEntity(named: curveHeadName) {
             let towardContainer = -bezierTangent(p0, p1, p2, 0)   // p0에서 곡선 밖으로 나가는 방향
             head.orientation = simd_quatf(from: [0, 1, 0], to: towardContainer)
-            head.position = p0 - towardContainer * (headHeight / 2 + 0.012)
+            head.position = p0 - towardContainer * (headHeight / 2 + 0.004)
         }
 
         layoutCurvePulse(in: group, endpoints: endpoints, p0: p0, p1: p1, p2: p2)
@@ -219,7 +220,7 @@ enum EdgeEntityFactory {
         guard let pulse = group.findEntity(named: curvePulseName) else { return }
         // 담기는 쪽(p2) → 담는 쪽(p0)으로 흐른다.
         let t = 1 - endpoints.flowPhase
-        let pulseLength = min(0.06, max(endpoints.length * 0.25, 0.01))
+        let pulseLength = min(0.045, max(endpoints.length * 0.2, 0.01))
         pulse.position = bezier(p0, p1, p2, t)
         pulse.orientation = simd_quatf(from: [0, 1, 0], to: bezierTangent(p0, p1, p2, t))
         pulse.scale = SIMD3<Float>(1, pulseLength, 1)
@@ -265,12 +266,12 @@ enum EdgeEntityFactory {
         let length = endpoints.length
         let phase = endpoints.flowPhase
 
-        var pulseLength = min(0.08, max(length * 0.3, 0.01))
+        var pulseLength = min(0.06, max(length * 0.25, 0.01))
         if endpoints.kind == .owns { pulseLength *= 0.5 }
         let travel = max(length - pulseLength, 0)
 
         if endpoints.isPaused {
-            pulse.scale = SIMD3<Float>(1.3, pulseLength, 1.3)
+            pulse.scale = SIMD3<Float>(1.15, pulseLength, 1.15)
             pulse.position = SIMD3<Float>(0, -travel / 2, 0)
             pulse.isEnabled = phase < 0.5
             return

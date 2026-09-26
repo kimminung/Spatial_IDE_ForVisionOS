@@ -131,12 +131,21 @@ struct CodePanelView: View {
         }
     }
 
-    /// 펼친 컨테이너를 다시 접는 작은 버튼. 코드가 아닌 구조 조작이라 카드 본문과 분리해 위에 둔다.
+    private var collapseLabel: String {
+        switch node.kind {
+        case .module:   "모듈 접기"
+        case .type:     "타입 접기"
+        case .function: "본문 접기"
+        case .variable: "본문 접기"
+        }
+    }
+
+    /// 펼친 노드를 다시 칩으로 접는 작은 버튼. 코드가 아닌 구조 조작이라 카드 본문과 분리해 위에 둔다.
     private func collapseButton(_ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack(spacing: 4) {
                 Image(systemName: "chevron.up")
-                Text(node.kind == .module ? "모듈 접기" : "타입 접기")
+                Text(collapseLabel)
             }
             .font(.caption2)
             .foregroundStyle(.secondary)

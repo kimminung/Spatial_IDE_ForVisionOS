@@ -65,22 +65,43 @@ final class AppModel {
     private(set) var cardSizes: [String: CGSize] = [:]
 
     /// 현재 공간에 존재하는 노드(카드 또는 칩). 루트에서 펼친 컨테이너를 따라 내려가며 모은다.
+    /// 짧은 프로퍼티(`isCompactMember`)는 부모 타입 카드 안의 한 줄로만 보이고 자기 노드를 갖지 않는다.
     var visibleNodes: [CodeNode] {
         var result: [CodeNode] = []
         func visit(_ node: CodeNode) {
             result.append(node)
             guard expandedIDs.contains(node.id) else { return }
-            for child in index.children(of: node.id) { visit(child) }
+            for child in index.children(of: node.id) where !isCompactMember(child) { visit(child) }
         }
         for root in index.roots { visit(root) }
         return result
     }
 
+    /// 타입의 짧은 저장/계산 프로퍼티. 인덱서가 타입 카드 스니펫에 이미 한 줄 요약으로 넣어 두므로 별도 카드를 만들지 않는다.
+    /// (변수 노드가 전체의 40%가 넘어, 모두 카드로 펼치면 한 타입만 펼쳐도 카드가 수십 장이 된다.)
+    /// 그래프 노드로는 남아 있어 심볼 해석·흐름 강조는 그대로 동작한다.
+    func isCompactMember(_ node: CodeNode) -> Bool {
+        guard node.kind == .variable, let parentID = node.parentID,
+              index.nodesByID[parentID]?.kind == .type else { return false }
+        let lineCount = node.codeSnippet?.split(separator: "\n", omittingEmptySubsequences: false).count ?? 0
+        return lineCount <= 3
+    }
+
     var visibleNodeIDs: Set<String> { Set(visibleNodes.map(\.id)) }
 
-    /// 코드 카드로 그릴 노드인지(잎 노드, 또는 펼친 컨테이너). 아니면 칩.
+    /// 코드 카드로 그릴 노드인지. **펼친 노드만** 카드다. 나머지는 칩이다:
+    /// - 컨테이너(모듈·타입) 칩: 이름 + 안에 접힌 자손 수. 탭 → 자식들이 나타난다.
+    /// - 잎(함수·긴 프로퍼티) 칩: 선언 첫 줄(시그니처) 한 줄. 탭 → 본문 카드가 열린다.
+    /// 한 타입에 멤버가 수십 개여도 시그니처 한 줄씩이면 눈높이 안에 들어오고, 본문은 보고 싶은 것만 연다.
     func isCard(_ node: CodeNode) -> Bool {
-        !index.hasChildren(node.id) || expandedIDs.contains(node.id)
+        expandedIDs.contains(node.id)
+    }
+
+    /// 펼칠 수 있는 노드: 자식이 있거나(컨테이너), 본문이 있는 잎(함수·프로퍼티).
+    func isExpandable(_ id: String) -> Bool {
+        if index.hasChildren(id) { return true }
+        guard let node = index.nodesByID[id] else { return false }
+        return node.codeSnippet?.isEmpty == false
     }
 
     var cardCount: Int { visibleNodes.filter(isCard).count }
@@ -90,7 +111,7 @@ final class AppModel {
     }
 
     func expand(_ id: String) {
-        guard index.hasChildren(id), !expandedIDs.contains(id) else { return }
+        guard isExpandable(id), !expandedIDs.contains(id) else { return }
         expandedIDs.insert(id)
         expansionOrder.removeAll { $0 == id }
         expansionOrder.append(id)
@@ -132,8 +153,8 @@ final class AppModel {
 
     /// 보이는 노드 사이의 엣지(리치 엔티티로 그림)와, 접힌 컨테이너로 묶인 컨텍스트 엣지(배치 라인 메시).
     ///
-    /// - 소유(`owns`) 엣지는 자식이 **카드**일 때만 그린다. 칩은 부모 바로 아래에 배치되어 소유가 레이아웃으로 드러나므로
-    ///   모듈 → 타입 칩 44개에 실린더 엣지를 다는 것은 낭비다.
+    /// - 소유(`owns`) 엣지는 자식이 **카드**(본문이 열린 노드)일 때만 그린다. 칩은 부모 근처에 배치되어 소유가 레이아웃으로
+    ///   드러나므로 칩마다 실린더 엣지를 다는 것은 낭비다.
     /// - 호출 계열 엣지의 끝점 중 하나라도 숨겨져 있으면, 각 끝점을 가장 가까운 보이는 조상으로 치환해 한 줄로 묶는다.
     var edgeSets: (focus: [CodeEdge], context: [ContextEdge]) {
         let visible = visibleNodeIDs
@@ -239,10 +260,11 @@ final class AppModel {
         tokenAnchors = [:]   // 카드들이 새 선택에 맞는 위치를 다시 보고한다.
     }
 
-    /// 검색 결과 등에서 노드 자체를 선택: 그 노드를 드러내고, 이름 토큰을 선택한 것과 같게 취급한다.
+    /// 검색 결과 등에서 노드 자체를 선택: 그 노드를 드러내고 본문을 열며, 이름 토큰을 선택한 것과 같게 취급한다.
     func focus(on nodeID: String) {
         guard let node = index.nodesByID[nodeID] else { return }
         reveal(nodeID)
+        if !isCompactMember(node) { expand(nodeID) }
         selectedToken = TokenSelection(nodeID: nodeID, text: UsageFlow.baseName(of: node.name))
         tokenAnchors = [:]
     }

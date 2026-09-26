@@ -32,6 +32,11 @@ final class GraphSceneController {
     private var pivotOffset: SIMD3<Float>?
     private var nodeEntities: [String: Entity] = [:]
     private var edgeEntities: [String: Entity] = [:]
+    /// 노드 ID → 카드/칩의 절반 크기(미터). 엣지가 카드 중심이 아니라 **테두리**에서 시작·끝나도록 하는 데 쓴다.
+    private var halfSizes: [String: SIMD2<Float>] = [:]
+
+    /// 엣지 끝점이 카드 테두리에서 더 떨어지는 여백(미터). 화살촉이 글자에 닿지 않게 한다.
+    private let edgeMargin: Float = 0.018
 
     init() {
         root.name = Self.rootEntityName
@@ -65,6 +70,7 @@ final class GraphSceneController {
         foldRegions: (CodeNode) -> [CodeFoldRegion],
         foldHinges: [String: SIMD3<Float>],
         foldSizes: [String: CGSize],
+        cardSizes: [String: SIMD2<Float>],
         palette: ScenePalette,
         attachments: RealityViewAttachments
     ) {
@@ -74,6 +80,7 @@ final class GraphSceneController {
         }
         let offset = pivotOffset ?? .zero
         let positions = layoutPositions.mapValues { $0 - offset }
+        halfSizes = cardSizes.mapValues { $0 / 2 }
 
         syncNodes(visible: visible, isCard: isCard, positions: positions, foldRegions: foldRegions,
                   foldHinges: foldHinges, foldSizes: foldSizes, attachments: attachments)
@@ -197,22 +204,58 @@ final class GraphSceneController {
 
     // MARK: - 매 프레임
 
-    /// 모든 포커스 엣지를 현재 노드 위치(또는 선택된 토큰 위치)에 맞추고, 흐름 펄스를 전진시킨다.
+    /// 모든 포커스 엣지를 현재 노드 위치에 맞추고, 흐름 펄스를 전진시킨다.
+    ///
+    /// 끝점 오프셋의 우선순위: 선택된 토큰 위치(`endpointAnchors`) > 카드 테두리. 토큰이 선택되지 않은 노드에서는
+    /// 엣지가 카드 중심(글자 위)이 아니라 상대 노드 쪽 테두리에서 출발·도착하므로 텍스트를 가로지르지 않는다.
     func tick(deltaTime: Float, endpointAnchors: [String: SIMD3<Float>]) {
         for entity in edgeEntities.values {
             guard let endpoints = entity.components[EdgeEndpointsComponent.self],
                   let start = nodeEntities[endpoints.fromNodeID]?.position,
                   let end = nodeEntities[endpoints.toNodeID]?.position else { continue }
+            let startTarget = endpointAnchors[endpoints.fromNodeID]
+                ?? boundaryOffset(of: endpoints.fromNodeID, at: start, toward: end, kind: endpoints.kind, isStart: true)
+            let endTarget = endpointAnchors[endpoints.toNodeID]
+                ?? boundaryOffset(of: endpoints.toNodeID, at: end, toward: start, kind: endpoints.kind, isStart: false)
             EdgeEntityFactory.update(
                 entity,
                 from: start,
                 to: end,
-                startTarget: endpointAnchors[endpoints.fromNodeID] ?? .zero,
-                endTarget: endpointAnchors[endpoints.toNodeID] ?? .zero,
+                startTarget: startTarget,
+                endTarget: endTarget,
                 deltaTime: deltaTime
             )
             EdgeEntityFactory.advanceFlow(entity, deltaTime: deltaTime)
         }
+    }
+
+    /// 노드 중심에서 카드 테두리(+여백)까지의 오프셋. 상대 노드 방향으로 사각형을 빠져나가는 점을 잡는다.
+    ///
+    /// - 소유(`owns`) 엣지는 트리 도식처럼 부모 **아래 변** 가운데에서 나와 자식 **위 변** 가운데로 들어간다.
+    /// - 그 외는 상대 방향(XY 평면)으로 사각형 경계와의 교점. 상대가 거의 정면/뒤(깊이 방향)에 있으면 위·아래 변을 쓴다.
+    private func boundaryOffset(of nodeID: String, at position: SIMD3<Float>, toward other: SIMD3<Float>, kind: CodeEdgeKind, isStart: Bool) -> SIMD3<Float> {
+        let half = halfSizes[nodeID] ?? SIMD2<Float>(0.12, 0.05)
+        let delta = other - position
+
+        if kind == .owns {
+            return SIMD3<Float>(0, isStart ? -(half.y + edgeMargin) : (half.y + edgeMargin), 0)
+        }
+
+        let planar = SIMD2<Float>(delta.x, delta.y)
+        let planarLength = simd_length(planar)
+        if planarLength < 0.03 {
+            // 거의 깊이 방향: 상대가 위에 있으면 윗변, 아래면 아랫변에서 나간다.
+            let sign: Float = delta.y >= 0 ? 1 : -1
+            return SIMD3<Float>(0, sign * (half.y + edgeMargin), 0)
+        }
+
+        let direction = planar / planarLength
+        var t = Float.greatestFiniteMagnitude
+        if abs(direction.x) > .ulpOfOne { t = min(t, half.x / abs(direction.x)) }
+        if abs(direction.y) > .ulpOfOne { t = min(t, half.y / abs(direction.y)) }
+        // 두 노드가 가까우면 양쪽 오프셋이 서로를 지나치지 않도록 절반 길이의 40%로 묶는다.
+        t = min(t + edgeMargin, simd_length(delta) * 0.4)
+        return SIMD3<Float>(direction.x * t, direction.y * t, 0)
     }
 
     // MARK: - 강조

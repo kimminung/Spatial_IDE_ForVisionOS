@@ -78,6 +78,7 @@ struct CodeSpaceImmersiveView: View {
                 foldRegions: CodeFolder.regions(for:),
                 foldHinges: foldHinges,
                 foldSizes: foldSizes,
+                cardSizes: sizes,
                 palette: palette,
                 attachments: attachments
             )
@@ -97,7 +98,7 @@ struct CodeSpaceImmersiveView: View {
                             node: node,
                             descendantCount: appModel.index.descendantCount(of: node.id),
                             isDimmed: isDimmed(node),
-                            isHighlighted: touchesFlow(node),
+                            isHighlighted: touchesFlow(node) || (appModel.highlightedNodeIDs?.contains(node.id) ?? false),
                             onTap: { appModel.toggleExpansion(node.id) },
                             onSizeChange: { appModel.setCardSize(nodeID: node.id, size: $0) }
                         )
@@ -169,7 +170,7 @@ struct CodeSpaceImmersiveView: View {
                 }
             },
             onSizeChange: { appModel.setCardSize(nodeID: node.id, size: $0) },
-            onCollapse: appModel.index.hasChildren(node.id) ? { appModel.collapse(node.id) } : nil
+            onCollapse: { appModel.collapse(node.id) }
         )
         .graphGestures(gestures)
     }
