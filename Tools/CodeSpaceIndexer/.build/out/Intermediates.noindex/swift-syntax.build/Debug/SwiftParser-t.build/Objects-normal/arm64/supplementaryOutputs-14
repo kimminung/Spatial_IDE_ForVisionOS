@@ -1,0 +1,37 @@
+{
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftParser/SwiftParserCompatibility.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftParserCompatibility.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftParserCompatibility.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftParserCompatibility.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftParserCompatibility.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftParserCompatibility.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftParser/SwiftVersion.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftVersion.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftVersion.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftVersion.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftVersion.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SwiftVersion.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftParser/SyntaxUtils.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SyntaxUtils.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SyntaxUtils.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SyntaxUtils.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SyntaxUtils.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/SyntaxUtils.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftParser/TokenConsumer.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenConsumer.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenConsumer.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenConsumer.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenConsumer.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenConsumer.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftParser/TokenPrecedence.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenPrecedence.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenPrecedence.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenPrecedence.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenPrecedence.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftParser-t.build/Objects-normal/arm64/TokenPrecedence.swiftdeps"
+  }
+}

@@ -1,0 +1,37 @@
+Target dependency graph (10 targets)
+Target 'codespace-indexer-product' in project 'CodeSpaceIndexer'
+➜ Explicit dependency on target 'SwiftSyntax-product' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftParser-product' in project 'swift-syntax'
+Target 'SwiftParser-product' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftParser' in project 'swift-syntax'
+➜ Explicit dependency on target '_SwiftSyntaxCShims' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax509' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax510' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax600' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax601' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax' in project 'swift-syntax'
+Target 'SwiftParser' in project 'swift-syntax'
+➜ Explicit dependency on target '_SwiftSyntaxCShims' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax509' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax510' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax600' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax601' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax' in project 'swift-syntax'
+Target 'SwiftSyntax-product' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax' in project 'swift-syntax'
+➜ Explicit dependency on target '_SwiftSyntaxCShims' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax509' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax510' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax600' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax601' in project 'swift-syntax'
+Target 'SwiftSyntax' in project 'swift-syntax'
+➜ Explicit dependency on target '_SwiftSyntaxCShims' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax509' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax510' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax600' in project 'swift-syntax'
+➜ Explicit dependency on target 'SwiftSyntax601' in project 'swift-syntax'
+Target 'SwiftSyntax601' in project 'swift-syntax' (no dependencies)
+Target 'SwiftSyntax600' in project 'swift-syntax' (no dependencies)
+Target 'SwiftSyntax510' in project 'swift-syntax' (no dependencies)
+Target 'SwiftSyntax509' in project 'swift-syntax' (no dependencies)
+Target '_SwiftSyntaxCShims' in project 'swift-syntax' (no dependencies)

@@ -77,6 +77,7 @@ CodeGraph
 | 3 | 인터랙션 적용 | Pinch-to-Drag, Hover 하이라이트, Magnify | 완료 → [태스크 문서](Tasks/Phase3_SpatialInteraction.md) |
 | 4 | 실제 데이터 바인딩 및 파티클 | JSON AST 로드 → 자동 배치, 파티클 실행 흐름 | 완료 → [태스크 문서](Tasks/Phase4_DataBindingAndParticles.md) |
 | 5 | Z축 코드 접힘(3축 코드 배열) | `catch`/`guard … else` 본문을 카드 뒤(-Z)로 꺾어 배치, 힌지 표식 | 1차 완료 → [태스크 문서](Tasks/Phase5_ZAxisCodeFolding.md) |
+| 6 | 대규모 코드베이스 대응 | SwiftSyntax 인덱서(실데이터·심볼 참조표), 포커스 모델(칩/카드 예산), 배치 라인 메시, 심볼 검색 | 1차 완료 → [태스크 문서](Tasks/Phase6_ScaleArchitecture.md) |
 
 ---
 

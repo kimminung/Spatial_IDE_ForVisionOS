@@ -1,0 +1,69 @@
+{
+  "" : {
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/codespace-indexer-primary.dia",
+    "emit-module-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/codespace-indexer-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/codespace-indexer-primary-emit-module.dia",
+    "pch" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/codespace-indexer-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/codespace-indexer-primary.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/DeclarationCollector.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/DeclarationCollector~partial.swiftmodule"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/Declarations.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/Declarations~partial.swiftmodule"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/GraphModel.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/GraphModel~partial.swiftmodule"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/ReferenceCollector.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/ReferenceCollector~partial.swiftmodule"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/SymbolResolver.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/SymbolResolver~partial.swiftmodule"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/Sources/CodeSpaceIndexer/main.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.dia",
+    "index-unit-output-path" : "/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.o",
+    "llvm-bc" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.bc",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main.swiftdeps",
+    "swiftmodule" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/CodeSpaceIndexer.build/Debug/codespace-indexer-p.build/Objects-normal/arm64/main~partial.swiftmodule"
+  }
+}

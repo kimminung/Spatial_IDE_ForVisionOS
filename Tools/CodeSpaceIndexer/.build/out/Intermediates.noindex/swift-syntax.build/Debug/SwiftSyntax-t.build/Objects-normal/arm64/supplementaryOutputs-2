@@ -1,0 +1,65 @@
+{
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Identifier.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/Identifier.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/Identifier.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/Identifier.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/Identifier.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/Identifier.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/MemoryLayout.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MemoryLayout.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MemoryLayout.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MemoryLayout.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MemoryLayout.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MemoryLayout.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/MissingNodeInitializers.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MissingNodeInitializers.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MissingNodeInitializers.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MissingNodeInitializers.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MissingNodeInitializers.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/MissingNodeInitializers.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Raw/RawSyntax.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntax.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntax.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntax.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntax.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntax.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Raw/RawSyntaxLayoutView.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxLayoutView.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxLayoutView.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxLayoutView.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxLayoutView.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxLayoutView.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Raw/RawSyntaxNodeProtocol.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxNodeProtocol.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxNodeProtocol.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxNodeProtocol.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxNodeProtocol.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxNodeProtocol.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Raw/RawSyntaxTokenView.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxTokenView.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxTokenView.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxTokenView.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxTokenView.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/RawSyntaxTokenView.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SourceEdit.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceEdit.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceEdit.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceEdit.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceEdit.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceEdit.swiftdeps"
+  },
+  "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SourceLength.swift" : {
+    "const-values" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceLength.swiftconstvalues",
+    "dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceLength.d",
+    "diagnostics" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceLength.dia",
+    "object" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceLength.o",
+    "swift-dependencies" : "/Users/coulson/Desktop/Spatial_IDE_ForVisionOS/Tools/CodeSpaceIndexer/.build/out/Intermediates.noindex/swift-syntax.build/Debug/SwiftSyntax-t.build/Objects-normal/arm64/SourceLength.swiftdeps"
+  }
+}

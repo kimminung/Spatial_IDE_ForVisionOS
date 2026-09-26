@@ -16,6 +16,8 @@ import SwiftUI
 /// **Z축 접힘**: `catch` 블록과 `guard … else` 본문은 이 카드에 그리지 않는다. 헤더 줄만 남기고
 /// 줄 끝에 힌지 글리프를 표시하며, 헤더 줄 왼쪽 아래 모서리의 위치를 노드 중심 기준 미터 오프셋으로
 /// 보고한다(`onFoldHingeChange`). 본문은 `FoldedBlockView`가 그 자리에서 뒤(-Z)로 꺾여 붙는다.
+///
+/// **컨테이너 카드**: 펼친 타입·모듈의 카드는 왼쪽 위에 작은 접기 버튼(`onCollapse`)이 있다.
 struct CodePanelView: View {
     @Environment(\.colorScheme) private var colorScheme
 
@@ -31,6 +33,10 @@ struct CodePanelView: View {
     let onTokenAnchorChange: (SIMD3<Float>?) -> Void
     /// 접힘 영역 ID → 힌지 위치(노드 중심 기준 미터 오프셋).
     let onFoldHingeChange: ([Int: SIMD3<Float>]) -> Void
+    /// 렌더링 크기(포인트). 레이아웃이 카드가 겹치지 않게 배치하는 데 쓴다.
+    var onSizeChange: ((CGSize) -> Void)? = nil
+    /// 컨테이너(타입·모듈) 카드일 때만 제공: 자식들을 다시 접는다.
+    var onCollapse: (() -> Void)? = nil
 
     private static let cardSpace = "codeCard"
 
@@ -86,23 +92,31 @@ struct CodePanelView: View {
     }
 
     var body: some View {
-        CodeLinesView(
-            node: node,
-            lines: visibleLines,
-            selectedToken: selectedToken,
-            breakpointLines: breakpointLines,
-            anchorTokenID: anchorTokenID,
-            coordinateSpaceName: Self.cardSpace,
-            foldHeaders: foldHeaders,
-            onTapToken: onTapToken,
-            onToggleBreakpoint: onToggleBreakpoint,
-            onAnchorFrame: { anchorTokenFrame = $0 },
-            onFoldHeaderFrame: { region, frame in foldHeaderFrames[region.id] = frame }
-        )
+        VStack(alignment: .leading, spacing: 4) {
+            if let onCollapse {
+                collapseButton(onCollapse)
+            }
+            CodeLinesView(
+                node: node,
+                lines: visibleLines,
+                selectedToken: selectedToken,
+                breakpointLines: breakpointLines,
+                anchorTokenID: anchorTokenID,
+                coordinateSpaceName: Self.cardSpace,
+                foldHeaders: foldHeaders,
+                onTapToken: onTapToken,
+                onToggleBreakpoint: onToggleBreakpoint,
+                onAnchorFrame: { anchorTokenFrame = $0 },
+                onFoldHeaderFrame: { region, frame in foldHeaderFrames[region.id] = frame }
+            )
+        }
         .font(.system(.footnote, design: .monospaced))
         .fixedSize()
         .coordinateSpace(name: Self.cardSpace)
-        .onGeometryChange(for: CGSize.self) { $0.size } action: { cardSize = $0 }
+        .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
+            cardSize = size
+            onSizeChange?(size)
+        }
         .shadow(color: colorScheme == .dark ? .black.opacity(0.85) : .white.opacity(0.9), radius: 2)
         .opacity(isDimmed ? SceneStyle.dimmedCardOpacity : 1)
         .animation(.easeInOut(duration: 0.2), value: isDimmed)
@@ -115,5 +129,23 @@ struct CodePanelView: View {
         .onChange(of: foldHinges, initial: true) { _, newValue in
             onFoldHingeChange(newValue)
         }
+    }
+
+    /// 펼친 컨테이너를 다시 접는 작은 버튼. 코드가 아닌 구조 조작이라 카드 본문과 분리해 위에 둔다.
+    private func collapseButton(_ action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 4) {
+                Image(systemName: "chevron.up")
+                Text(node.kind == .module ? "모듈 접기" : "타입 접기")
+            }
+            .font(.caption2)
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
+        }
+        .buttonStyle(.plain)
+        .contentShape(.hoverEffect, Capsule())
+        .hoverEffect()
+        .accessibilityLabel("\(node.name) 접기")
     }
 }

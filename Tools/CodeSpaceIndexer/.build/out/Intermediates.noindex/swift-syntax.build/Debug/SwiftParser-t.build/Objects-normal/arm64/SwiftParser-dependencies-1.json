@@ -1,0 +1,171 @@
+[
+  {
+    "isFramework" : false,
+    "moduleName" : "Darwin",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/Darwin.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "Swift",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/Swift.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "SwiftOnoneSupport",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/SwiftOnoneSupport.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "SwiftSyntax",
+    "modulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/Products\/Debug\/SwiftSyntax.swiftmodule\/arm64-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_Builtin_float",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_Builtin_float.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_Concurrency",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_Concurrency.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation1",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_DarwinFoundation1.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation2",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_DarwinFoundation2.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation3",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_DarwinFoundation3.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : false,
+    "moduleName" : "_StringProcessing",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/27.0\/_StringProcessing.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/Darwin.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/Darwin-4ZJNRKQC121SHW6M3W45ITL10.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "Darwin"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/SwiftShims-1VU497EDA5YH7P5HU6VYSO7BU.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "SwiftShims"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_AvailabilityInternal-CPEN9FF0M4W0XAYPZJKHIUHTL.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_AvailabilityInternal"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_float-2EJD1YPJFF08YXRKE82AO7I6M.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_float"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_inttypes-PIML94TN5MHDQMS8RJJBOWTH.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_inttypes"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_limits-2MDQV3Y6QVLC2O6LRPUUWYSAR.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_limits"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_stdarg-2DWM843ND8DJHLWJLCK3BWYW0.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_stdarg"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_stdbool-DJ9BLX164SLYLJBLJIMLBFAI2.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_stdbool"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_stddef-D718BBMB56H1DQEWSIHEIKH89.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_stddef"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_Builtin_stdint-82PE6K66TIML4VU59KVBDFO01.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_Builtin_stdint"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_DarwinFoundation1-51M5E4JSIKCAYWLA91VZLX0S0.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation1"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_DarwinFoundation2-7XXZNWWS4ME8YCEOW1M2IKDI2.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation2"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation3.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_DarwinFoundation3-CICQZ2EH4LMOOM0BJWERWU9QW.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_DarwinFoundation3"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/_SwiftConcurrencyShims-8Q9LNEZIMGPK4YNX6X17YIOCY.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_SwiftConcurrencyShims"
+  },
+  {
+    "clangModuleMapPath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/checkouts\/swift-syntax\/Sources\/_SwiftSyntaxCShims\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/_SwiftSyntaxCShims-1X7W3KIYCTL0VH12R09JUIE1M.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "_SwiftSyntaxCShims"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/ptrcheck-2S83WE8E8VRTE3M8SQS579OSI.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "ptrcheck"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
+    "clangModulePath" : "\/Users\/coulson\/Desktop\/Spatial_IDE_ForVisionOS\/Tools\/CodeSpaceIndexer\/.build\/out\/SDKExplicitPrecompiledModules\/sys_types-9LSQS2BDS8ZCPK3PRVV3HZLKT.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "sys_types"
+  }
+]

@@ -4,7 +4,7 @@ import Foundation
 ///
 /// 헤더 줄(`} catch {`, `guard … else {`)은 카드에 그대로 남아 "힌지" 역할을 하고,
 /// 그 아래 본문 줄들(`bodyLines`)만 별도 평면으로 옮겨 카드 뒤(-Z)로 꺾어 배치한다.
-struct CodeFoldRegion: Identifiable, Hashable {
+nonisolated struct CodeFoldRegion: Identifiable, Hashable {
     enum Kind: Hashable {
         /// `do { } catch { … }`의 catch 본문 — 오류가 잡혀 처리되는 경로.
         case catchBlock
@@ -27,7 +27,7 @@ struct CodeFoldRegion: Identifiable, Hashable {
 /// 1순위 후보(예외·탈출 경로)만 다룬다: `catch` 블록과 `guard … else` 본문.
 /// 중괄호 균형으로 본문 끝을 찾으며, 문자열·주석 안의 중괄호는 토크나이저가 별도 토큰으로
 /// 묶어 두므로 세지 않는다. 중첩된 영역은 가장 바깥 것만 접는다.
-enum CodeFolder {
+nonisolated enum CodeFolder {
 
     static func regions(for node: CodeNode) -> [CodeFoldRegion] {
         regions(in: CodeTokenizer.tokenize(node.codeSnippet ?? ""))

@@ -2,7 +2,7 @@ import Foundation
 
 /// 코드 스니펫을 토큰 단위로 나눈다. 카드가 각 토큰을 개별 뷰로 그려,
 /// 식별자(변수·타입·함수 이름)에만 응시 하이라이트와 탭을 붙일 수 있게 한다.
-enum CodeTokenKind: Equatable {
+nonisolated enum CodeTokenKind: Equatable {
     case keyword
     case identifier
     case typeName      // 대문자로 시작하는 식별자
@@ -13,7 +13,7 @@ enum CodeTokenKind: Equatable {
     case whitespace
 }
 
-struct CodeToken: Identifiable, Equatable {
+nonisolated struct CodeToken: Identifiable, Equatable {
     let id: Int
     let text: String
     let kind: CodeTokenKind
@@ -22,12 +22,13 @@ struct CodeToken: Identifiable, Equatable {
     var isInteractive: Bool { kind == .identifier || kind == .typeName }
 }
 
-struct CodeLine: Identifiable {
+nonisolated struct CodeLine: Identifiable {
     let id: Int
     let tokens: [CodeToken]
 }
 
-enum CodeTokenizer {
+/// 순수 문자열 처리라 액터 격리가 필요 없다(`CodeFolder`, 레이아웃 계산 등 비격리 문맥에서도 호출).
+nonisolated enum CodeTokenizer {
     private static let keywords: Set<String> = [
         "let", "var", "func", "struct", "class", "enum", "extension", "protocol", "import",
         "static", "private", "public", "internal", "final", "override", "return", "if", "guard",
