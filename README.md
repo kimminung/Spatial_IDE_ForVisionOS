@@ -123,4 +123,6 @@ swift run codespace-indexer ../../Spatial_IDE_ForVisionOS --module CodeSpace \
 
 ## 라이선스
 
-TBD
+[PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)을 따릅니다.
+연구·학습·개인 프로젝트 등 **비상업적 목적**으로는 사용·수정·배포가 자유롭지만, **상업적 이용은 허용되지 않습니다**.
+전체 조항은 [`LICENSE`](LICENSE) 파일을 참고하세요.
