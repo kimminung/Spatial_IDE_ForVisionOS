@@ -2,8 +2,8 @@
 
 **코드 구조를 3D 공간에 펼쳐서 탐색하는 visionOS 몰입형 개발 환경입니다.**
 
-[Primitive](https://primitive.io)의 공간 기반 코드 시각화 UX를 Apple Vision Pro 네이티브 기술(SwiftUI + RealityKit + ARKit)로
-재해석한 프로젝트입니다. 윈도우나 볼륨의 경계 없이 `ImmersiveSpace` 안에서 실제 Swift 소스 코드를 3D 그래프로 펼치고,
+공간 기반 코드 시각화 UX를 Apple Vision Pro 네이티브 기술(SwiftUI + RealityKit + ARKit)로 구현한 프로젝트입니다.
+윈도우나 볼륨의 경계 없이 `ImmersiveSpace` 안에서 실제 Swift 소스 코드를 3D 그래프로 펼치고,
 토큰 단위로 쓰임새를 추적하며, 손 제스처만으로 확대·회전·탐색합니다.
 
 <p align="center">

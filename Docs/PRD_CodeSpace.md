@@ -1,6 +1,6 @@
 # PRD: Spatial IDE for visionOS (가칭: CodeSpace)
 
-> 테크 PRD. Primitive의 공간 기반 코드 시각화 UX를 visionOS 네이티브 기술(SwiftUI + RealityKit)로 구현한다.
+> 테크 PRD. 공간 기반 코드 시각화 UX를 visionOS 네이티브 기술(SwiftUI + RealityKit)로 구현한다.
 > 윈도우(Window)나 볼륨(Volume)의 경계 없이 `ImmersiveSpace` 안에서 코드를 3D 기하 구조로 펼친다.
 
 ---
